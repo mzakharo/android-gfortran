@@ -19,11 +19,11 @@ scripts. A few modifications are still required, and the building process takes 
 
 ### Goals & environment
 
-This tutorial aims at building the **GNU toolchain 4.9** with **Android NDK r13b**.
+This tutorial aims at building the **GNU toolchain 4.9** with **Android NDK r19c**.
 It has been tested on Linux x86_64, but I expect that it should work with
 small changes on other systems supported by the NDK.
 
-Past versions of this README covered building with **Android NDK r11c & r12b**.
+Past versions of this README covered building with **Android NDK r13b**.
 Please refer to those for special instructions.
 
 ### Windows
@@ -65,8 +65,7 @@ repo init -u https://android.googlesource.com/platform/manifest -b gcc
 ```
 
 You can then use `repo sync` to clone all parts of the toolchain,
-and `repo forall -c git checkout ndk-r13-release` to checkout
-the latest r13 version.
+and `repo forall -c git checkout ndk-release-r19`
 
 #### Adding support for Fortran
 
@@ -86,7 +85,7 @@ or Windows 32-bit, that shoule be sufficient.
 Simply call `build.py` under `toolchain/gcc` which will take care of everything.
 You can specify which toolchain to build. For instance:
 ```
-./build.py --toolchain arm-linux-androideabi
+./build.py --toolchain aarch64-linux-android
 ```
 See `./build.py -h` for possible values.
 If nothing is specified, it will build all of them.
